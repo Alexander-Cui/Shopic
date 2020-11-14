@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
+import MainText from "./Components/mainText";
+import SubmitPic from "./Components/SubmitPic"
+import Homepage from "./images/homepage.jpg"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h3 className="title"> SHOPIC</h3>
+        <MainText/>
+        <SubmitPic></SubmitPic>
+        <img src={Homepage} className="homepage_pic"></img>
     </div>
   );
 }
