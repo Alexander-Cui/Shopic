@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "shopic",
+  "private_key_id": "1fff06b1c0a497ead8ca3c612016b7d7fc1e3dd8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD/BtVrO4m8xr7U\nHEkPhdflCkz51Sryy8nxuUt38516sBDwCi2Ldg0eXft9abLV/IBgwDEeHA6q1UdK\npieqgKBDdKKYpOm5igcwAFCSEUgglm5B0lIk/nICbTI4c5S737YGLQhnl3AcaZcO\nOjzBwVJysw+F82AJ5FgG17U3nBt/XuYo6in3/1QY6d6bLs49kucCgUt8Cum4JiVC\nBoeBfI3OvnIEL4G1DQRdNgzfVrq+yvwAJDpmWdMJEstpvsVMvN1yfFYazZ+hswu0\nyMNKR/fiA+r7xMtz7vs8To+2WTp4luP3wFB3+y2wcECE8i/hbIdh1kYBTdYnILpv\nuLA8rZRvAgMBAAECggEAB+QgPaP8g78/603iFnS9oZIk9TWFoo3nurMvFfZtRBa4\nddk/CnadD/hrbkETa/JOeUmF7sE+KeAh+pfgPt2ysWfp1e+UZfhjzIuAnWRwCSzE\n1wRKE3kZaXoTgTR3r7TLuK6IkpN6wDD7KIRXvCJEtJCrcAdd1P1TZypEMzgr5WEf\nvLN/s+fxCzmoBY52mVeTk/0tOtjJPVvjYpn5ViQIV1G9/V+B3LJP6M7cQJa7+Kog\nGcERuITNf7QgPFmJsF6zghKpfh+S1H8mz77NmKyYUjs6Ex7PfBCnK+nAMzG5krOA\nKNAVQSovyRiG1krWD/3xwp5wpuVajqh0XihHlTTLQQKBgQD/0caQgc/5Duzp12YN\negV2lWI/0KeWf8FbhQo2PZSTsPzyZs2mz5vMW1SpH6WiIshKjrE4lzmYOD1xztiu\n9uFBmsA/xvXFCqeF+wJltHrHTlU8EDwjSWkYzuttC1thg7zFzYOoSaXsIA36Zgn0\nD9pGjFrcYkR/Gpo3bqFA6pqLvwKBgQD/NOovPejX/Pj+oHWqsBbXcXyLtWauOu14\n2TW5DfiypQZ2fFHxuoPgX1pljVLD88t0V0MiqrxuBcRw/gBXKudJ8Nf3MJ0S0Txs\nQ2SAoNpYOuY9v1a090BygZqiL86AuBZNSgCTFZN/zIClxn7adT8EFTvYcZbIPlsB\nfOT0U2PjUQKBgF9KaMiTUkDXynAgiCck+Lv/USWsN4Db/c51dCRYM+v/1XkFyj0E\nwGgS7SpCW5RVmH4NQP5vdki5SkoGXrhtxeKGHm6jUhEfst85bN8tpz5uc1l4Qq5y\nPe+7w/5OaK+ePsb/krcxF9ko54wKTlLXRNtalM3a3ODrq95SG0bvHLpJAoGAOsMC\nURJeNK1I38guj7iv6bd1x+1i0Sc8WqEY35058FhTHqENdS1PBDCwbcWWkwvlgso8\n6RSLAoJNcv7pMSjtzHaqI36MDDMlSIBT+dIPtFULgpg17MEpk7QH2ORNFhJNAErT\nywoixkBeNs13k/F/Kv+Aohu1bjH9XmBVj3RMAaECgYEAgYjsmc+IWjTIc81MnRcT\nD8zy86+MDiX5HBIPGPrdahDpJi0NvbpALx5GNKLWZB5yMLpIXiD1k38xOtVU9q4V\nqFJAyc5FJ+hAgy/H78cKcRmYb/twNqC0iJDuB2RTTsMc7rxwiJDNxc1Di+3DYK0U\nMFmQmvjmhTzSaJhPeXV3izU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "shopic@shopic.iam.gserviceaccount.com",
+  "client_id": "107762985680290842849",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/shopic%40shopic.iam.gserviceaccount.com"
+}
