@@ -93,12 +93,12 @@ def display_image(img, segmap):
     # img = Image.fromarray(img.astype('uint8'))
     return Image.fromarray(ia_seg_map.draw_on_image(img, colors=colors))
 
-def isolate_apparel(img, segmap, item_id,width, height):
+def isolate_apparel(img, segmap, item_id):
     new_img = []
     segmap = np.array(segmap == item_id)
-    for i in range(img_height):
+    for i in range(img.shape[0]):
         new_list = []
-        for j in range(img_width):
+        for j in range(img.shape[1]):
             if segmap[i][j] != False:
                 new_list.append(img[i][j])
             else:
@@ -109,7 +109,15 @@ def isolate_apparel(img, segmap, item_id,width, height):
     new_img = np.array(new_img, dtype=np.uint8)
     return new_img
 
+def get_segmap_printId(image_name):
+    segmenter = Segmenter() #Segmenter API
+    # image_name = 'Anne.jpg' #Image name we want to segment
 
+    img_folder = os.path.join(os.getcwd(),'img')
+    img = Image.open(os.path.join(img_folder, image_name))
+    segmap, id_to_class = segmenter.predict_on_image(img)
+
+    return segmap, id_to_class, img
 
 # Mapping of class ids with class names
 ID_TO_CLASS = {
@@ -161,60 +169,53 @@ ID_TO_CLASS = {
     46: 'tassel'
 }
 
-segmenter = Segmenter()
+# segmenter = Segmenter() #Segmenter API
+image_name = 'Anne.jpg' #Image name we want to segment
 
-#img_url = "https://upload.wikimedia.org/wikipedia/commons/5/5a/Batik_Fashion_01.jpg"
+# img_folder = os.path.join(os.getcwd(),'img')
+# img = Image.open(os.path.join(img_folder, image_name))
 
-#img_url = "https://media.discordapp.net/attachments/776997213976526893/777353700196876328/unknown.png"
+# ### If we want to use URL's
+# #img_url = "https://upload.wikimedia.org/wikipedia/commons/5/5a/Batik_Fashion_01.jpg"
+# #img_url = "https://media.discordapp.net/attachments/776997213976526893/777353700196876328/unknown.png"
+# #img = get_image_from_url(img_url)
+# #segmap, id_to_class = segmenter.predict_on_url(img_url)
 
-#img = get_image_from_url(img_url)
+# segmap, id_to_class = segmenter.predict_on_image(img)
 
-img_folder = os.path.join(os.getcwd(),'img')
-img = Image.open(os.path.join(img_folder, 'Anne.jpg') )
+image_name = 'Anne.jpg'
 
-
-#segmap, id_to_class = segmenter.predict_on_url(img_url)
-segmap, id_to_class = segmenter.predict_on_image(img)
+segmap, id_to_class, img = get_segmap_printId(image_name)
 print(id_to_class)
-
+img.show()
 img = np.array(img, dtype=np.uint8)
 
-print(img.shape)
-
-img_height = img.shape[0]
-img_width = img.shape[1]
+# img_height = img.shape[0]
+# img_width = img.shape[1]
 
 img = Image.fromarray(img)
-img.show()
+
+
+### Show OG image and img
+# img.show()
 display_image(img, segmap).show()
 
 
 segmap = np.array(segmap)
-mask = (segmap == 11) | (segmap == 9)  
-print(np.array(segmap))
+# mask = (segmap == 11) | (segmap == 9)  
+# print(np.array(segmap))
 
-segmap *= mask # New Segmap that only contains object 1 and 9
+# segmap *= mask # New Segmap that only contains object 1 and 9
 
-display_image(img, segmap).show()
+# display_image(img, segmap).show()
 
 
 img = np.asarray(img)
-segmap_1 = np.array(segmap == 11) # Which item I want to isolate
 
+#segmap_1 = np.array(segmap == 11) # Which item I want to isolate
 
-# new_img = []
-# for i in range(img_height):
-#   new_list = []
-#   for j in range(img_width):
-#     if segmap_1[i][j] != False:
-#       new_list.append(img[i][j])
-#     else:
-#       new_list.append([255,255,255]) #If not part of mask change the colour to white essentially change the background to white
-#   new_img.append(new_list)
+isolated_img = isolate_apparel(img, segmap, 11)
 
-# new_img = np.array(new_img, dtype=np.uint8)
+Image.fromarray(isolated_img).show() 
 
-isolated_img = isolate_apparel(img, segmap, 11, img_width, img_height)
-
-Image.fromarray(isolated_img).show()
 
