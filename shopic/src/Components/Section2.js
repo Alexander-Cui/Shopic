@@ -63,9 +63,10 @@ function Section2({ dropDownItems, setGalleryImages, ...props }) {
             })
 
             let status = await response.status
+            console.log('calling!')
 
             if (response.status === 200) {
-
+                console.log('called!')
                 let data = await response.json()
                 let base64 = data['imageData']
                 setImage(`data:image/jpeg;base64,${base64}`)

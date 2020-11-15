@@ -125,17 +125,17 @@ def segment():
 
     id_ = request.json['id']
     filename = request.json['filename']
-    print(id_)
 
-    segmap, id_to_class, img = sa.get_segmap_printId(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    new_img = sa.isolate_apparel(img, segmap, id_) #(key of dictionary)
+    segmap, id_to_class, img = sa.get_segmap_printId(filename)
+    
+    new_img = sa.isolate_apparel(img, segmap, int(id_)) #(key of dictionary)
 
     new_img = Image.fromarray(new_img) 
     buffered = BytesIO()
     new_img.save(buffered, format="JPEG")
     img_str = base64.b64encode(buffered.getvalue())
 
-    return jsonify({'imageData':"data:image/png;base64," + str(img_str)})
+    return jsonify({'imageData':str(img_str.decode('utf-8'))})
 
 # if __name__ == "__main__":
 #     app.run(debug=True)
