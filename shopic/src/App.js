@@ -10,6 +10,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import 'antd/dist/antd.css'
 // import { Link, animateScroll as scroll } from "react-scroll"
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 

@@ -11,6 +11,7 @@ function Section2(){
             <img src={Uploaded} className="selectedImage" alt="testing"></img>
             <h2 className="itemsDetected">Clothing items detected!</h2>
             <h1 className="selectItems">Select the item for which you'd like to shop</h1>
+
             <Dropdown></Dropdown>
         </div>
     </div>)
