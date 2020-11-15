@@ -28,7 +28,7 @@ function SubmitPic() {
     return (
         <div className='searchBar'>
             <Dragger className={'upload'} {...props} showUploadList={false}>
-                <h1>drag and drop files here</h1>
+                <h1>  Drag and drop here</h1>
             </Dragger>
         </div>
     )
