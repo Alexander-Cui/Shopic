@@ -94,25 +94,28 @@ def mask():
 
 @app.route('/segment', methods=['GET','POST'])
 def segment():
-    if request.method == 'POST':
-        print('i have been called')
-    # check if the post request has the file part
-    if 'file' not in request.files:
-        flash('No file part')
-        return redirect(request.url)
-    file = request.files['file']
-    # if user does not select file, browser also
-    # submit an empty part without filename
-    if file.filename == '':
-        flash('No selected file')
-        return redirect(request.url)
-    if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    # if request.method == 'POST':
+    #     print('i have been called')
+    # # check if the post request has the file part
+    # if 'file' not in request.files:
+    #     flash('No file part')
+    #     return redirect(request.url)
+    # file = request.files['file']
+    # # if user does not select file, browser also
+    # # submit an empty part without filename
+    # if file.filename == '':
+    #     flash('No selected file')
+    #     return redirect(request.url)
+    # if file and allowed_file(file.filename):
+    #     filename = secure_filename(file.filename)
+    #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+    id_ = request.json['id']
+    filename = request.json['filename']
 
     segmap, id_to_class, img = sa.get_segmap_printId(os.path.join(app.config['UPLOAD_FOLDER'], filename))
     
-    new_img = sa.isolate_apparel(img, segmap, 11) #(key of dictionary)
+    new_img = sa.isolate_apparel(img, segmap, id_) #(key of dictionary)
 
     new_img = Image.fromarray(new_img) 
     buffered = BytesIO()
