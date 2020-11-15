@@ -2,8 +2,8 @@ import base64
 import io
 import json
 import os
-# import cv2
-import imgaug as ia
+import cv2
+# import imgaug as ia
 import numpy as np
 import pandas as pd
 import requests
