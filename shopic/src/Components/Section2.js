@@ -5,6 +5,7 @@ import Uploaded from "../images/preview.jpg"
 import Dropdown from "../Components/Dropdown"
 import { useHistory } from 'react-router-dom';
 import { Button } from 'antd'
+import { AnimatePresence, motion } from "framer-motion"
 
 function Section2({ dropDownItems, setGalleryImages, ...props }) {
     let prefix = 'data:image/jpeg;base64,'
@@ -82,7 +83,7 @@ function Section2({ dropDownItems, setGalleryImages, ...props }) {
 
     }
 
-    return (<div>
+    return (<motion.div exit={{ opacity:0, x:"-100vw"}} animate={{opacity:1, x:0}} initial={{opacity:0, x:"-100vw"}} >
         <div className="block">
             {sideImage === '' ? <img src={`/img/${filename}`} className="selectedImage" alt="testing"></img> :
                 <img src={sideImage} className="selectedImage" alt="testing"></img>}
@@ -93,7 +94,7 @@ function Section2({ dropDownItems, setGalleryImages, ...props }) {
 
         </div>
         <Button onClick={onConfirm} style={sideImage === '' ? { 'display': 'none' } : { 'display': '' }} className='confirm' size='large'>Confirm</Button>
-    </div>)
+    </motion.div>)
 }
 
 export default Section2

@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
     "antd": "^4.8.2",
+    "framer-motion": "^2.9.4",
     "react": "^17.0.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^17.0.1",
