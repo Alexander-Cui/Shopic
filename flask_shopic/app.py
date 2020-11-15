@@ -61,9 +61,7 @@ def upload_file():
             (os.path.join(app.config['UPLOAD_FOLDER'], filename)), 
             'style = women')
             return jsonify({'data':results})
-            # return redirect(url_for('uploaded_file',
-            #                         filename=filename))
-
+            
 def encode_image(image):
   image_content = image.read()
   return base64.b64encode(image_content)
