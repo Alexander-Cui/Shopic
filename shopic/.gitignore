@@ -6,7 +6,7 @@
 .pnp.js
 
 /flask_shopic/venv
-
+/flask_shopic/__pycache__/
 # testing
 /coverage
 
