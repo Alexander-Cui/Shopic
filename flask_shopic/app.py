@@ -80,7 +80,7 @@ def predict():
             'apparel-v2',
             base_64, 
             'style = women')
-        return 'hello'
+        return jsonify({'data':results})
 
 @app.route('/mask', methods=['POST'])
 def mask():
@@ -125,9 +125,9 @@ def segment():
 
     id_ = request.json['id']
     filename = request.json['filename']
+    print(id_)
 
     segmap, id_to_class, img = sa.get_segmap_printId(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    
     new_img = sa.isolate_apparel(img, segmap, id_) #(key of dictionary)
 
     new_img = Image.fromarray(new_img) 

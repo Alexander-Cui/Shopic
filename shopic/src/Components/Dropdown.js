@@ -9,9 +9,9 @@ function Choices({ dropDownItems, onDropDownSelect, ...props }) {
 
   const items = (
     <Menu>
-      {dropDownItems.map(category => {
+      {dropDownItems['dropDown'].map(category => {
         return (
-          <Menu.Item key={category[0]} onClick={() => onDropDownSelect(category[0], category[1])}>
+          <Menu.Item key={category[0]} onClick={() => onDropDownSelect(category[0])}>
             {category[1]}
           </Menu.Item>
         )

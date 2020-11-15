@@ -1,3 +1,11 @@
+.confirm{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    border:none;
+    font-size:32px;
+    padding:0;
+    margin-top: 10px;
+}
+
 .block{
     
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
