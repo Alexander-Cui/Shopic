@@ -7,8 +7,7 @@ import Section2 from "./Section2"
 import { Link, animateScroll as scroll } from "react-scroll"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-function Index() {
-
+function Index({ setDropDownItems, ...props }) {
 
 
     return (
@@ -17,7 +16,7 @@ function Index() {
             <MainText />
 
 
-            <SubmitPic></SubmitPic>
+            <SubmitPic setDropDownItems={setDropDownItems} />
             <img src={Homepage} className="homepage_pic"></img>
             <Section2></Section2>
         </div>

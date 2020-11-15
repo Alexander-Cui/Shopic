@@ -10,7 +10,7 @@ function SubmitPic() {
     const props = {
         name: 'file',
         multiple: false,
-        action: '/upload_file',
+        action: '/mask',
         onChange(info) {
             const { status } = info.file;
             if (status !== 'uploading') {
