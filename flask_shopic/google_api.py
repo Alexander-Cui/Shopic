@@ -1,5 +1,6 @@
 from google.cloud import vision
 from google.protobuf import field_mask_pb2 as field_mask
+import base64
 
 def list_product_sets(project_id, location):
     """List all product sets.
@@ -125,7 +126,7 @@ def get_reference_image(
 
 def get_similar_products_file(
         project_id, location, product_set_id, product_category,
-        file_path, filter):
+        base_64, filter):
     """Search similar products to image.
     Args:
         project_id: Id of the project.
@@ -144,9 +145,10 @@ def get_similar_products_file(
     image_annotator_client = vision.ImageAnnotatorClient()
 
     # Read the image as a stream of bytes.
-    with open(file_path, 'rb') as image_file:
-        content = image_file.read()
-
+    # with open(file_path, 'rb') as image_file:
+    #     content = image_file.read()
+    content=base64.b64decode(base_64)
+    
     # Create annotate image request along with product search feature.
     image = vision.Image(content=content)
 
@@ -162,8 +164,18 @@ def get_similar_products_file(
         product_search_params=product_search_params)
 
     # Search products similar to the image.
+    features = {
+    "features": 
+        {
+          "type":"LABEL_DETECTION",
+          "maxResults":1
+        }
+      
+    }
+    print('hello')
     response = image_annotator_client.product_search(
         image, image_context=image_context)
+
 
     index_time = response.product_search_results.index_time
     print('Product set index time: ')

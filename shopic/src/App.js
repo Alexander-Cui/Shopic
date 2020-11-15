@@ -16,8 +16,8 @@ import 'antd/dist/antd.css'
 
 function App() {
 
-  const [dropDownItems, setDropDownItems] = useState({})
-  const [galleryImages, setGalleryImages] = useState([])
+  const [dropDownItems, setDropDownItems] = useState(['one two'])
+  const [galleryImages, setGalleryImages] = useState(['one two'])
 
   return (
     <Router>
@@ -45,7 +45,8 @@ function App() {
               setGalleryImages={setGalleryImages} />
           </Route>
           <Route path="/choose">
-            <Section2 dropDownItems={dropDownItems}
+            <Section2
+              dropDownItems={dropDownItems}
               setGalleryImages={setGalleryImages} />
           </Route>
           <Route path="/">

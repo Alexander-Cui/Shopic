@@ -50,18 +50,33 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            #above is normal file upload saving to img directory
+            # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
+            #above is normal file upload saving to img directory
+            # segmap, id_to_class, img = sa.get_segmap_printId(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             # Under is calling google API
             results = g.get_similar_products_file(project_id,
             location, 
             product_set_id,
             'apparel-v2',
-            (os.path.join(app.config['UPLOAD_FOLDER'], filename)), 
+            encode_image(file), 
             'style = women')
             return jsonify({'data':results})
             
 def encode_image(image):
   image_content = image.read()
   return base64.b64encode(image_content)
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    if request.method == 'POST':
+        print('hello')
+        base_64 = request.data
+        # print(base_64)
+        results = g.get_similar_products_file(project_id,
+            location, 
+            product_set_id,
+            'apparel-v2',
+            base_64, 
+            'style = women')
+        return 'hello'

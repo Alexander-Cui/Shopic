@@ -9,7 +9,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 function Index({ setDropDownItems, ...props }) {
 
-
+    let test_object = { '3': 'sweater', '4': 'cardigan', '7': 'pants' }
     return (
         <div className="App">
             <h3 className="title"> SHOPIC</h3>
@@ -18,7 +18,7 @@ function Index({ setDropDownItems, ...props }) {
 
             <SubmitPic setDropDownItems={setDropDownItems} />
             <img src={Homepage} className="homepage_pic"></img>
-            <Section2></Section2>
+            {/* <Section2></Section2> */}
         </div>
     );
 }
