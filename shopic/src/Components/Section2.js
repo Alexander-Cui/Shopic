@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Section2.css"
-import Uploaded from "../images/shopic_logo.png"
+import Uploaded from "../images/preview.jpg"
 import Dropdown from "../Components/Dropdown"
 
 function Section2(){
