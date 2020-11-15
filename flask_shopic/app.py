@@ -8,8 +8,8 @@ from io import BytesIO
 import sama_api as sa
 from PIL import Image
 
-# from google.cloud import vision
-# import google_api as g
+from google.cloud import vision
+import google_api as g
 
 app = Flask(__name__)
 CORS(app)
