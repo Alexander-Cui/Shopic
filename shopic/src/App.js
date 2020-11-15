@@ -6,10 +6,10 @@ import Homepage from "./images/homepage.jpg"
 import Section2 from "./Components/Section2"
 import {Link, animateScroll as scroll} from "react-scroll"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import 'antd/dist/antd.css'
+
 
 function App() {
-
-
 
   return (
     <div className="App">
@@ -19,7 +19,7 @@ function App() {
         
         <SubmitPic></SubmitPic>
         <img src={Homepage} className="homepage_pic"></img>
-        <Section2></Section2>
+        <div><Section2></Section2></div>
     </div>
   );
 }
