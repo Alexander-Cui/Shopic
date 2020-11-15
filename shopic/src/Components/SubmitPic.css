@@ -9,3 +9,12 @@
 .ant-upload-drag-container{
     width: 50%;
 }
+
+.searchBar{
+    width:30%;
+    position:absolute;
+    left: 143px;
+    top:46%;
+    outline: none;
+    border-radius:10px;
+}
