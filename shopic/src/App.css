@@ -43,21 +43,15 @@ body{
 
 .title{
   position: absolute;
-width: 44px;
-height: 15px;
-left: 144px;
-top: 97px;
-font-family: 'Gothic A1', 'Arial Narrow', Arial, sans-serif;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 15px;
+    width: 44px;
+    height: 15px;
+    left: 144px;
+    top: 97px;
+  font-family: 'Gothic A1', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 15px;
 }
 
-.homepage_pic{
-  margin-left: 50%;
-  width: 400px;
-  margin-top: 10%;
-  margin-bottom:10%;
-}
 

@@ -1,0 +1,12 @@
+.homepage_pic{
+    position: absolute;
+width: 500px;
+height: 600px;
+left: 667px;
+top: 93px;
+object-fit: cover;
+  }
+  
+#dragdrop{
+    width:50%;
+}

@@ -204,15 +204,15 @@ def get_similar_products_file(
             key = keys.split(':')[1].strip()
             product_labels_dict[key] = values.split(':')[1].strip()
             
-        info_dict['productLabels'] = product_labels_dict
+#         info_dict['productLabels'] = product_labels_dict
 
-        jsonible.append(info_dict)
-        # print('Score(Confidence): {}'.format(result.score))
-        # print('Image name: {}'.format(result.image))
+#         jsonible.append(info_dict)
+#         # print('Score(Confidence): {}'.format(result.score))
+#         # print('Image name: {}'.format(result.image))
 
-        # print('Product name: {}'.format(product.name))
-        # print('Product display name: {}'.format(
-        #     product.display_name))
-        # print('Product description: {}\n'.format(product.description))
-        # print('Product labels: {}\n'.format(product.product_labels))
+#         # print('Product name: {}'.format(product.name))
+#         # print('Product display name: {}'.format(
+#         #     product.display_name))
+#         # print('Product description: {}\n'.format(product.description))
+#         # print('Product labels: {}\n'.format(product.product_labels))
     return jsonible
