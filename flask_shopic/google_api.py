@@ -171,15 +171,36 @@ def get_similar_products_file(
 
     results = response.product_search_results.results
 
-    print('Search results:')
+    jsonible = []
+
+    # print('Search results:')
     for result in results:
         product = result.product
+        info_dict = {}
+        info_dict['score'] = str(result.score)
+        info_dict['imageName'] = str(result.image)
+        print(result)
+        info_dict['productName'] = str(product.name)
+        info_dict['productDisplayName'] = str(product.display_name)
+        info_dict['productDescription'] = str(product.description)
+        product_labels_dict = {}
 
-        print('Score(Confidence): {}'.format(result.score))
-        print('Image name: {}'.format(result.image))
+        for key_value in str(product.product_labels).split(','):
+            key_values = key_value.replace('"','').replace('[','').replace(']','').replace('\n',',').split(',')
+            keys = key_values[0]
+            values = key_values[1]
+            key = keys.split(':')[1].strip()
+            product_labels_dict[key] = values.split(':')[1].strip()
+            
+        info_dict['productLabels'] = product_labels_dict
 
-        print('Product name: {}'.format(product.name))
-        print('Product display name: {}'.format(
-            product.display_name))
-        print('Product description: {}\n'.format(product.description))
-        print('Product labels: {}\n'.format(product.product_labels))
+        jsonible.append(info_dict)
+        # print('Score(Confidence): {}'.format(result.score))
+        # print('Image name: {}'.format(result.image))
+
+        # print('Product name: {}'.format(product.name))
+        # print('Product display name: {}'.format(
+        #     product.display_name))
+        # print('Product description: {}\n'.format(product.description))
+        # print('Product labels: {}\n'.format(product.product_labels))
+    return jsonible

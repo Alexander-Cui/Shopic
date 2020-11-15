@@ -1,6 +1,7 @@
 import os
 from flask import Flask,flash, request, redirect, url_for, jsonify
 from flask import render_template
+from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import base64
 
@@ -8,6 +9,7 @@ from google.cloud import vision
 import google_api as g
 
 app = Flask(__name__)
+CORS(app)
 
 project_id='shopic'
 location='us-east1'
@@ -35,6 +37,7 @@ def allowed_file(filename):
 @app.route('/upload_file', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
+        print('i have been called')
         # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
@@ -57,8 +60,7 @@ def upload_file():
             'apparel-v2',
             (os.path.join(app.config['UPLOAD_FOLDER'], filename)), 
             'style = women')
-
-            return jsonify({'called':'true'})
+            return jsonify({'data':results})
             # return redirect(url_for('uploaded_file',
             #                         filename=filename))
 
