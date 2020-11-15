@@ -169,53 +169,55 @@ ID_TO_CLASS = {
     46: 'tassel'
 }
 
-# segmenter = Segmenter() #Segmenter API
-image_name = 'Anne.jpg' #Image name we want to segment
 
-# img_folder = os.path.join(os.getcwd(),'img')
-# img = Image.open(os.path.join(img_folder, image_name))
+# try:
+#     # segmenter = Segmenter() #Segmenter API
+#     image_name = 'Anne.jpg' #Image name we want to segment
 
-# ### If we want to use URL's
-# #img_url = "https://upload.wikimedia.org/wikipedia/commons/5/5a/Batik_Fashion_01.jpg"
-# #img_url = "https://media.discordapp.net/attachments/776997213976526893/777353700196876328/unknown.png"
-# #img = get_image_from_url(img_url)
-# #segmap, id_to_class = segmenter.predict_on_url(img_url)
+#     # img_folder = os.path.join(os.getcwd(),'img')
+#     # img = Image.open(os.path.join(img_folder, image_name))
 
-# segmap, id_to_class = segmenter.predict_on_image(img)
+#     # ### If we want to use URL's
+#     # #img_url = "https://upload.wikimedia.org/wikipedia/commons/5/5a/Batik_Fashion_01.jpg"
+#     # #img_url = "https://media.discordapp.net/attachments/776997213976526893/777353700196876328/unknown.png"
+#     # #img = get_image_from_url(img_url)
+#     # #segmap, id_to_class = segmenter.predict_on_url(img_url)
 
-image_name = 'Anne.jpg'
+#     # segmap, id_to_class = segmenter.predict_on_image(img)
 
-segmap, id_to_class, img = get_segmap_printId(image_name)
-print(id_to_class)
-img.show()
-img = np.array(img, dtype=np.uint8)
+#     segmap, id_to_class, img = get_segmap_printId(image_name)
+#     print(id_to_class)
+#     print(img)
+#     img.show()
+#     img = np.array(img, dtype=np.uint8)
 
-# img_height = img.shape[0]
-# img_width = img.shape[1]
+#     # img_height = img.shape[0]
+#     # img_width = img.shape[1]
 
-img = Image.fromarray(img)
-
-
-### Show OG image and img
-# img.show()
-display_image(img, segmap).show()
+#     img = Image.fromarray(img)
 
 
-segmap = np.array(segmap)
-# mask = (segmap == 11) | (segmap == 9)  
-# print(np.array(segmap))
-
-# segmap *= mask # New Segmap that only contains object 1 and 9
-
-# display_image(img, segmap).show()
+#     ### Show OG image and img
+#     # img.show()
+#     display_image(img, segmap).show()
 
 
-img = np.asarray(img)
+#     segmap = np.array(segmap)
+#     # mask = (segmap == 11) | (segmap == 9)  
+#     # print(np.array(segmap))
 
-#segmap_1 = np.array(segmap == 11) # Which item I want to isolate
+#     # segmap *= mask # New Segmap that only contains object 1 and 9
 
-isolated_img = isolate_apparel(img, segmap, 11)
+#     # display_image(img, segmap).show()
 
-Image.fromarray(isolated_img).show() 
 
+#     img = np.asarray(img)
+
+#     #segmap_1 = np.array(segmap == 11) # Which item I want to isolate
+
+#     isolated_img = isolate_apparel(img, segmap, 11)
+
+#     Image.fromarray(isolated_img).show() 
+# except:
+#     pass
 
