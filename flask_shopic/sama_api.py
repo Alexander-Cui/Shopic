@@ -95,7 +95,11 @@ def display_image(img, segmap):
 
 def isolate_apparel(img, segmap, item_id):
     new_img = []
+    img = np.array(img, dtype=np.uint8)
+    # img = Image.fromarray(img)
+    segmap = np.array(segmap)
     segmap = np.array(segmap == item_id)
+
     for i in range(img.shape[0]):
         new_list = []
         for j in range(img.shape[1]):
@@ -194,15 +198,15 @@ ID_TO_CLASS = {
 #     # img_height = img.shape[0]
 #     # img_width = img.shape[1]
 
-#     img = Image.fromarray(img)
+#     #img = Image.fromarray(img)
 
 
 #     ### Show OG image and img
 #     # img.show()
-#     display_image(img, segmap).show()
+#     #display_image(img, segmap).show()
 
 
-#     segmap = np.array(segmap)
+#     #segmap = np.array(segmap)
 #     # mask = (segmap == 11) | (segmap == 9)  
 #     # print(np.array(segmap))
 
@@ -211,7 +215,7 @@ ID_TO_CLASS = {
 #     # display_image(img, segmap).show()
 
 
-#     img = np.asarray(img)
+#     #img = np.asarray(img)
 
 #     #segmap_1 = np.array(segmap == 11) # Which item I want to isolate
 
