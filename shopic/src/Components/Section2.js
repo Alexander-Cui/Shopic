@@ -4,16 +4,35 @@ import Uploaded from "../images/shopic_logo.png"
 import Dropdown from "../Components/Dropdown"
 
 function Section2({ image, setImage, dropDownItems, setGalleryImages, ...props }) {
+    let prefix = 'data:image/jpeg;base64,'
 
-
-    const onDropDownSelect = async (id, filename) => {
-        let f = 'data:image/jpeg;base64,'
+    const onConfirm = async () => {
+        let data = {
+            'base64': ''
+        }
         let response = await fetch('/predict', {
             method: 'POST',
-            body: '',
-            contentTransferEncoding: 'Base64'
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Transfer-Encoding': 'Base64'
+            },
         })
+    }
 
+    const onDropDownSelect = async (id, filename) => {
+        let data = {
+            'filename': filename,
+            'id': id
+        }
+        let response = await fetch('/segment', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Transfer-Encoding': 'Base64'
+            },
+        })
     }
 
     return (<div>

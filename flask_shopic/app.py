@@ -70,9 +70,7 @@ def encode_image(image):
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        print('hello')
-        base_64 = request.data
-        # print(base_64)
+        base_64 = request.json['base64']
         results = g.get_similar_products_file(project_id,
             location, 
             product_set_id,
