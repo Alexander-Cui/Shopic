@@ -4,7 +4,7 @@ import Icon from "../images/shopic_logo.png"
 
 const GalleryPage = ({ galleryImages, ...props }) => {
     const first_three = galleryImages.slice(0, 3)
-
+    console.log(first_three)
     return (
         <div>
             <h2 className="title" > SHOPIC</h2>
@@ -12,7 +12,7 @@ const GalleryPage = ({ galleryImages, ...props }) => {
                 {first_three.map(path => {
                     return (
 
-                        <img src={'/img/Anne.jpg'} alt="hello" className="itemIcon" />
+                        <img src={`/img/${path}.jpg`} alt="hello" className="itemIcon" />
 
                     )
                 })}

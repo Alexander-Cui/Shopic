@@ -20,7 +20,6 @@ function SubmitPic({ setDropDownItems }) {
             if (status === 'done') {
                 const { response } = info.file
                 let filename = info.file.name
-
                 let fake_response = { '3': 'sweater', '4': 'cardigan', '7': 'pants' }
                 let array_object = Object.entries(response)
                 setDropDownItems({ 'dropDown': array_object, 'fileName': filename })
